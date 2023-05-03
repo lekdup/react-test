@@ -1,20 +1,22 @@
 import { useState } from 'react';
 import './F0fimal.scss';
-import data from '../../data/data';
+// import data from '../../data/data';
 
 const F0fimal = () => {
     const [newPanda, setNewPanda] = useState({
-            id: '',
             name: '',
             image: ''
         });
     // console.log(newPanda);
-    console.log(data);
+    // console.log(data);
+    const addPanda = (newPanda) => { alert("add")
+        setNewPanda([...newPanda, {name: '', image: ''} ]);
+    }
     return (
         <div className='content'>
             <h1>Les animaux</h1>
-            {data.map((animal) => (
-                <div className="result" key={animal.id}>
+            {newPanda.map((animal) => (
+                <div className="result" key={animal.name}>
                     <img 
                         src={animal.image}
                         className="result-image"
@@ -28,15 +30,8 @@ const F0fimal = () => {
                 className='form'
                 onSubmit={(e) => {
                     e.preventDefault();
-                    setNewPanda({
-                        ...newPanda,
-                        data: [...data, {
-                            id: Math.max(...data.map((p) => p.id)) + 1,
-                            name: newPanda.name,
-                            image: newPanda.image,
-                        }]
-                    });
-                    // setNewPanda('');
+                    addPanda(newPanda);
+                    setNewPanda('');
                 }}
             >
                 <input
@@ -45,10 +40,7 @@ const F0fimal = () => {
                     className='form-name'
                     value={newPanda.name}
                     onChange={(e) => {
-                        setNewPanda({
-                            ...newPanda,
-                            name: e.target.value
-                        });
+                        setNewPanda(e.target.value);
                     }}
                 />
                 <input
@@ -57,10 +49,7 @@ const F0fimal = () => {
                     className='form-url'
                     value={newPanda.image}
                     onChange={(e) => {
-                        setNewPanda({
-                            ...newPanda,
-                            image: e.target.value
-                        })
+                        setNewPanda(e.target.value)
                     }}
                 />
                 <button
