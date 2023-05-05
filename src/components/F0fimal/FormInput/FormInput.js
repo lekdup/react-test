@@ -8,7 +8,7 @@ const FormInput = ({ addPanda }) => {
         // console.log(e.target);
         const { name, value } = e.target;
         setNewPanda({...newPanda, [name]: value});
-        console.log(newPanda);
+        // console.log(newPanda);
     }
 
     const handleSubmit = (e) => {
