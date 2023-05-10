@@ -5,6 +5,8 @@ body {
   width: 800px;
   min-height: 100vh;
   margin: 1em auto;
-  text-align: center;
-  background-color: #ddd;
+}
+
+.ui.card.center-card {
+  margin: auto;
 }

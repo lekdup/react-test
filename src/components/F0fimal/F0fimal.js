@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './F0fimal.scss';
 import FormInput from './FormInput/FormInput';
+import { Button, Icon } from 'semantic-ui-react';
+
 
 const F0fimal = () => {
     const [pandas, setPandas] = useState([
@@ -25,7 +27,11 @@ const F0fimal = () => {
         }]);
     }
 
-    console.log(pandas);
+    const handleClick = (e) => {
+        e.target.parentNode.classList.add("result--none");
+    }
+
+    // console.log(pandas);
 
     return (
         <div className='content'>
@@ -37,11 +43,10 @@ const F0fimal = () => {
                         className="result-image"
                         alt={panda.name} />
                     <p className="result-name">{panda.name}</p>
-                    <button
-                        className='result-close'
-                    >
-                        x
-                    </button>
+                    <Button
+                        icon='close'
+                        onClick={handleClick}
+                    />
                 </div>
             ))}
             <FormInput

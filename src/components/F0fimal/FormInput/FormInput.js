@@ -21,7 +21,6 @@ const FormInput = ({ addPanda }) => {
         className='form'
         onSubmit={handleSubmit}
         >
-                <pre>{JSON.stringify(newPanda, undefined, 2)}</pre>
                 <input
                     type='text'
                     name='name'

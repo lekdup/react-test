@@ -1,3 +1,7 @@
+.content {
+    background-color: #ddd;
+    text-align: center;
+}
 h1 {
     font-size: 3rem;
     color: #f0f;
@@ -9,7 +13,7 @@ h1 {
     padding: 1rem;
     width: 400px;
     height: 400px;
-    object-fit: cover;
+    overflow: hidden;
     position: relative;
     &-image {
         width: 100%;
@@ -19,7 +23,7 @@ h1 {
         color: white;
         font-size: 3rem;
         text-shadow: 2px 2px 5px #f0f;
-        top: 50%;
+        top: 80%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -28,6 +32,14 @@ h1 {
         right: 8%;
         top: 8%;
     }
+    &--none {
+        display: none;
+    }
+}
+.ui.icon.button {
+    position: absolute;
+    right: 8%;
+    top: 8%;
 }
 
 .form {
